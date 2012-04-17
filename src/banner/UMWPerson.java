@@ -47,5 +47,13 @@ public class UMWPerson {
         bannerID = id;
     }
     
-    protected void set
+    protected void setUserName(String uName){
+        userName = uName;
+    }
+    
+    protected void setPassword(String pword){
+        password = pword;
+    }
+    
+    
 }
