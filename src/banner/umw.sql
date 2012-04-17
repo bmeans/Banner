@@ -9,6 +9,7 @@
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 CREATE DATABASE IF NOT EXISTS umw;
+GRANT ALL PRIVILEGES ON umw.* to 'assist'@'localhost' identified by 'assist';
 use umw;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -19,19 +20,65 @@ use umw;
 -- Database: `test`
 --
 
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `bannerid` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(12) NOT NULL,
+  `password` varchar(12) NOT NULL,
+   'classification' char(1) NOT NULL
+  PRIMARY KEY (`bannerid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+
+CREATE TABLE IF NOT EXISTS 'students' (
+    'classification' char(1) NOT NULL,
+    'bannerid' int(11) NOT NULL,
+    'firstName' varchar(11),
+    'lastName' varchar(11),
+    PRIMARY KEY('bannerid')
+)
+CREATE TABLE IF NOT EXISTS 'faculty' (
+    'classification' char(1) NOT NULL,
+    'bannerid' int(11) NOT NULL,
+    'firstName' varchar(11),
+    'lastName' varchar(11),
+    PRIMARY KEY('bannerid')
+)
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`bannerid`, `username`, `password`,'classification') VALUES
+(1, 'raz', 'p00d13','F'),
+(2, 'ann', 'changeme','S'),
+(3, 'lazy', 'qwerty','S');
 -- --------------------------------------------------------
 
+
+CREATE TABLE IF NOT EXISTS studentCourses(
+	bannerid int NOT NULL,
+	crn int NOT NULL,
+	PRIMARY KEY (bannerid, crn),
+	CONSTRAINT users_crn_fk FOREIGN KEY (bannerid) REFERENCES Users (bannerid),
+	CONSTRAINT courses_crn_fk FOREIGN KEY (crn) REFERENCES courses (crn)
+) ENGINE = MYISAM;
+
 --
--- Table structure for table `umw2010`
+-- Table structure for table `courses`
 --
 
-CREATE TABLE IF NOT EXISTS `umw2010` (
+
+CREATE TABLE IF NOT EXISTS `courses` (
   `crn` int(11) NOT NULL,
   `course` varchar(15) NOT NULL,
   `section` tinyint(4) NOT NULL,
   `title` varchar(50) NOT NULL,
   `poi` char(1) NOT NULL,
-  `co` char(1) NOT NULL,
   `prereqs` char(1) NOT NULL,
   `atc` varchar(10) NOT NULL,
   `credits` int(11) NOT NULL,
