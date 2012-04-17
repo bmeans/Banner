@@ -29,20 +29,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `bannerid` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(12) NOT NULL,
   `password` varchar(12) NOT NULL,
-   'classification' char(1) NOT NULL
+   'classification' char(1) NOT NULL,
   PRIMARY KEY (`bannerid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 
 CREATE TABLE IF NOT EXISTS 'students' (
-    'classification' char(1) NOT NULL,
     'bannerid' int(11) NOT NULL,
     'firstName' varchar(11),
     'lastName' varchar(11),
     PRIMARY KEY('bannerid')
 )
 CREATE TABLE IF NOT EXISTS 'faculty' (
-    'classification' char(1) NOT NULL,
     'bannerid' int(11) NOT NULL,
     'firstName' varchar(11),
     'lastName' varchar(11),
