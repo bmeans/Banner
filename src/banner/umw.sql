@@ -17,46 +17,52 @@ use umw;
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `test`
+-- Database: 'test'
 --
 
 
 --
--- Table structure for table `users`
+-- Table structure for table 'users'
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
-  `bannerid` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(12) NOT NULL,
-  `password` varchar(12) NOT NULL,
-   'classification' char(1) NOT NULL,
-  PRIMARY KEY (`bannerid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+CREATE TABLE IF NOT EXISTS users (
+  bannerid int(11) NOT NULL AUTO_INCREMENT,
+  username varchar(12) NOT NULL,
+  password varchar(12) NOT NULL,
+   classification char(1) NOT NULL,
+  PRIMARY KEY (bannerid)
+) ENGINE=MyISAM;
 
 
-CREATE TABLE IF NOT EXISTS 'students' (
-    'bannerid' int(11) NOT NULL,
-    'firstName' varchar(11),
-    'lastName' varchar(11),
-    PRIMARY KEY('bannerid')
-)
-CREATE TABLE IF NOT EXISTS 'faculty' (
-    'bannerid' int(11) NOT NULL,
-    'firstName' varchar(11),
-    'lastName' varchar(11),
-    PRIMARY KEY('bannerid')
-)
+CREATE TABLE IF NOT EXISTS students (
+    bannerid int(11) NOT NULL,
+    firstName varchar(11),
+    lastName varchar(11),
+    PRIMARY KEY(bannerid)
+);
+
+CREATE TABLE IF NOT EXISTS faculty (
+    bannerid int(11) NOT NULL,
+    firstName varchar(11),
+    lastName varchar(11),
+    PRIMARY KEY(bannerid)
+);
 
 --
--- Dumping data for table `users`
+-- Dumping data for table 'users'
 --
 
-INSERT INTO `users` (`bannerid`, `username`, `password`,'classification') VALUES
+INSERT INTO users (bannerid, username, password,classification) VALUES
 (1, 'raz', 'p00d13','F'),
 (2, 'ann', 'changeme','S'),
 (3, 'lazy', 'qwerty','S');
 -- --------------------------------------------------------
+INSERT INTO students (bannerid, firstName, lastName) VALUES
+(2, 'Ann', 'Sally'),
+(3, 'Lazy', 'Jo');
 
+INSERT INTO faculty (bannerid, firstName, lastName) VALUES
+(1, 'Ron', 'Zacharski');
 
 CREATE TABLE IF NOT EXISTS studentCourses(
 	bannerid int NOT NULL,
@@ -67,33 +73,34 @@ CREATE TABLE IF NOT EXISTS studentCourses(
 ) ENGINE = MYISAM;
 
 --
--- Table structure for table `courses`
+-- Table structure for table 'courses'
 --
 
 
-CREATE TABLE IF NOT EXISTS `courses` (
-  `crn` int(11) NOT NULL,
-  `course` varchar(15) NOT NULL,
-  `section` tinyint(4) NOT NULL,
-  `title` varchar(50) NOT NULL,
-  `poi` char(1) NOT NULL,
-  `prereqs` char(1) NOT NULL,
-  `atc` varchar(10) NOT NULL,
-  `credits` int(11) NOT NULL,
-  `time` varchar(20) NOT NULL,
-  `days` varchar(5) NOT NULL,
-  `building` varchar(10) NOT NULL,
-  `room` varchar(6) NOT NULL,
-  `instructor` varchar(25) NOT NULL,
-  `requirements` varchar(35) NOT NULL,
-  PRIMARY KEY (`crn`)
+CREATE TABLE IF NOT EXISTS courses (
+  crn int(11) NOT NULL,
+  course varchar(15) NOT NULL,
+  section tinyint(4) NOT NULL,
+  title varchar(50) NOT NULL,
+  poi char(1) NOT NULL,
+  co char(1) NOT NULL DEFAULT '',
+  prereqs char(1) NOT NULL,
+  atc varchar(10) NOT NULL,
+  credits int(11) NOT NULL,
+  time varchar(20) NOT NULL,
+  days varchar(5) NOT NULL,
+  building varchar(10) NOT NULL,
+  room varchar(6) NOT NULL,
+  instructor varchar(25) NOT NULL,
+  requirements varchar(35) NOT NULL,
+  PRIMARY KEY (crn)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `umw`
+-- Dumping data for table 'umw'
 --
 
-INSERT INTO `umw2010` (`crn`, `course`, `section`, `title`, `poi`, `co`, `prereqs`, `atc`, `credits`, `time`, `days`, `building`, `room`, `instructor`, `requirements`) VALUES
+INSERT INTO courses (crn, course, section, title, poi, co, prereqs, atc, credits, time, days, building, room, instructor, requirements) VALUES
 (11941, 'AMST 201', 1, 'Intro to American Studies', 'Y', '', '', 'SI,WI', 3, '11:00 am-12:15 pm', 'TR', 'MERC', '309', 'Rigelhaupt J', ''),
 (12559, 'AMST 201', 2, 'Intro to American Studies', 'Y', '', '', 'SI,WI', 3, '12:30 pm-1:45 pm', 'TR', 'MERC', '309', 'Rigelhaupt J', ''),
 (11942, 'AMST 202', 1, 'Soph American Studies Seminar', '', '', '', '', 3, '3:30 pm-4:45 pm', 'TR', 'ANXA', '110', 'Rigelhaupt J', ''),
@@ -494,7 +501,7 @@ INSERT INTO `umw2010` (`crn`, `course`, `section`, `title`, `poi`, `co`, `prereq
 (12134, 'ENGL 302A', 4, 'Intro to Creative Writing', '', '', 'Y', 'WI', 3, '2:00 pm-2:50 pm', 'MWF', 'CMBS', '322', 'Earnhart D', ''),
 (12182, 'ENGL 304A', 1, 'Creative Writing:Poetry', 'Y', '', 'Y', 'WI', 3, '11:00 am-12:15 pm', 'TR', 'CMBS', '322', 'Emerson C', ''),
 (10251, 'ENGL 305A', 1, 'Creative Writing: Fiction', '', '', 'Y', 'WI', 3, '11:00 am-12:15 pm', 'TR', 'CMBS', '003', 'Watkins S', '');
-INSERT INTO `umw2010` (`crn`, `course`, `section`, `title`, `poi`, `co`, `prereqs`, `atc`, `credits`, `time`, `days`, `building`, `room`, `instructor`, `requirements`) VALUES
+INSERT INTO courses (crn, course, section, title, poi, co, prereqs, atc, credits, time, days, building, room, instructor, requirements) VALUES
 (12656, 'ENGL 306P', 1, 'Writing Adolescent Fiction', '', '', '', 'WI', 3, '2:00 pm-3:15 pm', 'TR', 'CMBS', '003', 'Watkins S', ''),
 (11500, 'ENGL 312', 1, 'Creative Writing:Nonfiction', '', '', 'Y', 'WI', 3, '1:00 pm-1:50 pm', 'MWF', 'CMBS', '003', 'Rafferty C', ''),
 (12657, 'ENGL 312', 2, 'Creative Writing:Nonfiction', '', '', 'Y', 'WI', 3, '2:00 pm-2:50 pm', 'MWF', 'CMBS', '003', 'Rafferty C', ''),
@@ -890,7 +897,7 @@ INSERT INTO `umw2010` (`crn`, `course`, `section`, `title`, `poi`, `co`, `prereq
 (12545, 'MUTH 369', 1, 'Orchestration', '', '', 'Y', '', 3, '9:30 am-10:45 am', 'TR', 'POLL', 'TBA', 'Naylor C', ''),
 (10691, 'MUTH 382A', 1, 'Music Theory IV', '', '', 'Y', '', 3, '11:00 am-11:50 am', 'MWF', 'POLL', '213', 'Long D', ''),
 (10692, 'MUTH 386A', 1, 'Theory IV Skills              ', '', 'Y', '', '', 1, '11:00 am-12:15 pm', 'TR', 'POLL', '213', 'Long D', '');
-INSERT INTO `umw2010` (`crn`, `course`, `section`, `title`, `poi`, `co`, `prereqs`, `atc`, `credits`, `time`, `days`, `building`, `room`, `instructor`, `requirements`) VALUES
+ INSERT INTO courses (crn, course, section, title, poi, co, prereqs, atc, credits, time, days, building, room, instructor, requirements) VALUES
 (10694, 'MUTH 490', 1, 'Music History-Theory Seminar', '', '', 'Y', 'SI,WI', 3, '3:00 pm-3:50 pm', 'MWF', 'POLL', '304', 'Fickett M', ''),
 (13012, 'MUTH 491', 1, 'Individual Study              ', 'Y', '', '', '', 1, 'TBA', 'TBA', 'TBA', 'TBA', 'Naylor C', ''),
 (13013, 'MUTH 491', 2, 'Individual Study              ', 'Y', '', '', '', 1, 'TBA', 'TBA', 'TBA', 'TBA', 'Gately D', ''),
