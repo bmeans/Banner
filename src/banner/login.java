@@ -4,6 +4,8 @@
  */
 package banner;
 
+import java.sql.*;
+import javax.sql.*;
 /**
  *
  * @author lambert
@@ -120,9 +122,44 @@ public class login extends javax.swing.JDialog {
     }//GEN-LAST:event_usernameActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        String dbtime;
+        String dbUrl = "jdbc:mysql://localhost/umw";
+        String dbClass = "com.mysql.jdbc.Driver";
         String name = username.getText();
-        String password = passwordField.getText();
-        String query = "Select user FROM users WHERE username = " +  name + "AND password = " + password;
+        char [] pw  = passwordField.getPassword();
+        String password = new String(pw);
+        String query = "Select * FROM users WHERE username = " +  name + "AND password = " + password;
+      /*  
+        if (username.getText().isEmpty()) {
+           JOptionPane.showMessageDialog(this, "Please enter Username");
+        } else if (jPasswordField1.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Password");
+        } else {
+try {
+ResultSet rset = Db.getData("SELECT * FROM login WHERE user='" + username.getText() + "'");
+
+if (rset.next()) {
+//load table data and assign them to some Strings for the ease of use.
+
+String u = rset.getString("user");
+String p = rset.getString("pass");
+
+if (u.equals(username.getText()) && p.equals(password) {
+//Unlocked... write ur Code here
+
+} else {
+JOptionPane.showMessageDialog(this, "wrong password!");
+//Access Denied...
+}
+} else {
+JOptionPane.showMessageDialog(this, "Invalid username");
+}
+} catch (Exception e) {
+System.out.println(e);
+}
+} */
+  
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
