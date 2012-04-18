@@ -252,7 +252,7 @@ public class studentForm extends javax.swing.JFrame {
                  String title = rset.getString("title");
                  String days = rset.getString("days");
                  String time = rset.getString("time");
-                 jTextArea1.append(String.format("%-5s %-10s %-5s %-45s %-5s %-5s\n",
+                 jTextArea1.append(String.format("%-10s %-20s %-10s %-70s %-10s %-10s\n",
                         crn, course, section, title, days, time));
                  
             }
