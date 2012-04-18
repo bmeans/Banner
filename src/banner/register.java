@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package banner;
 
 import java.sql.ResultSet;
@@ -9,6 +6,7 @@ import java.sql.ResultSet;
 /**
  *
  * @author lambert
+ * @author daniel
  */
 public class register extends javax.swing.JFrame {
 
@@ -188,12 +186,26 @@ public class register extends javax.swing.JFrame {
              System.out.println(bannerId.getText());
              System.out.println(username.getText());
              System.out.println(jPasswordField1.getPassword());
-            Db.putData("INSERT INTO users (username, password)"
+             System.out.println(studentButton.isSelected());
+             char classif=' ';
+             if(studentButton.isSelected()){
+                 classif = 'S';
+             }
+             if(facultyButton.isSelected()){
+                 classif = 'F';
+             }
+             if(classif == ' '){
+                 //popup for not selection radio button
+             }
+             
+             Db.putData("INSERT INTO users (username, password, classification)"
                 + " VALUES(\'"+username.getText() 
-                +"\', \'"+ jPasswordField1.getPassword()+"\')");
+                +"\', \'"+ jPasswordField1.getPassword()+"\', \'"+ classif +"\')");
+             this.setVisible(false);
         }catch (Exception e){
-            System.out.println("Error Registering");
+            System.out.println(e);
         }
+        
     }//GEN-LAST:event_submitRegisterActionPerformed
     
     /**
