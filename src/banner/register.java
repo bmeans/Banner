@@ -4,6 +4,8 @@
  */
 package banner;
 
+import java.sql.ResultSet;
+
 /**
  *
  * @author lambert
@@ -186,14 +188,14 @@ public class register extends javax.swing.JFrame {
              System.out.println(bannerId.getText());
              System.out.println(username.getText());
              System.out.println(jPasswordField1.getPassword());
-        Db.putData("INSERT INTO users (username, password)"
+            Db.putData("INSERT INTO users (username, password)"
                 + " VALUES(\'"+username.getText() 
                 +"\', \'"+ jPasswordField1.getPassword()+"\')");
         }catch (Exception e){
             System.out.println("Error Registering");
         }
     }//GEN-LAST:event_submitRegisterActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */
