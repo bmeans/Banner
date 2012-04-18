@@ -7,7 +7,7 @@
 -- Server version: 5.1.37
 -- PHP Version: 5.3.0
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
 CREATE DATABASE IF NOT EXISTS umw;
 GRANT ALL PRIVILEGES ON umw.* to 'assist'@'localhost' identified by 'assist';
 use umw;
@@ -39,14 +39,14 @@ CREATE TABLE IF NOT EXISTS students (
     firstName varchar(11),
     lastName varchar(11),
     PRIMARY KEY(bannerid)
-);
+)ENGINE=MyISAM;
 
 CREATE TABLE IF NOT EXISTS faculty (
     bannerid int(11) NOT NULL,
     firstName varchar(11),
     lastName varchar(11),
     PRIMARY KEY(bannerid)
-);
+)ENGINE=MyISAM;
 
 --
 -- Dumping data for table 'users'
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS studentCourses(
 	bannerid int NOT NULL,
 	crn int NOT NULL,
 	PRIMARY KEY (bannerid, crn),
-	CONSTRAINT users_crn_fk FOREIGN KEY (bannerid) REFERENCES Users (bannerid),
+	CONSTRAINT users_bannerid_fk FOREIGN KEY (bannerid) REFERENCES users (bannerid),
 	CONSTRAINT courses_crn_fk FOREIGN KEY (crn) REFERENCES courses (crn)
 ) ENGINE = MYISAM;
 
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS courses (
   section tinyint(4) NOT NULL,
   title varchar(50) NOT NULL,
   poi char(1) NOT NULL,
-  co char(1) NOT NULL DEFAULT '',
+  co char(1) NOT NULL,
   prereqs char(1) NOT NULL,
   atc varchar(10) NOT NULL,
   credits int(11) NOT NULL,
@@ -94,13 +94,13 @@ CREATE TABLE IF NOT EXISTS courses (
   instructor varchar(25) NOT NULL,
   requirements varchar(35) NOT NULL,
   PRIMARY KEY (crn)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table 'umw'
 --
 
-INSERT INTO courses (crn, course, section, title, poi, co, prereqs, atc, credits, time, days, building, room, instructor, requirements) VALUES
+INSERT INTO courses (crn, course, section, title, poi,co, prereqs, atc, credits, time, days, building, room, instructor, requirements) VALUES
 (11941, 'AMST 201', 1, 'Intro to American Studies', 'Y', '', '', 'SI,WI', 3, '11:00 am-12:15 pm', 'TR', 'MERC', '309', 'Rigelhaupt J', ''),
 (12559, 'AMST 201', 2, 'Intro to American Studies', 'Y', '', '', 'SI,WI', 3, '12:30 pm-1:45 pm', 'TR', 'MERC', '309', 'Rigelhaupt J', ''),
 (11942, 'AMST 202', 1, 'Soph American Studies Seminar', '', '', '', '', 3, '3:30 pm-4:45 pm', 'TR', 'ANXA', '110', 'Rigelhaupt J', ''),
