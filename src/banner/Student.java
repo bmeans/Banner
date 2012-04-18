@@ -20,7 +20,7 @@ public class Student extends UMWPerson{
     private int GPA;
     
     //constructor
-    Student(){
+    Student(String bannerid){
         super.setFirstName("");
         super.setLastName(" ");
         super.setPassword(" ");

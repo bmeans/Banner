@@ -85,6 +85,11 @@ public class studentForm extends javax.swing.JFrame {
         });
 
         jButton4.setText("Search");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("View Completed Courses");
 
@@ -264,6 +269,10 @@ System.out.println(e);
     private void jTextArea1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTextArea1AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextArea1AncestorAdded
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        new searchForm().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     /**
