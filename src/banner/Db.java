@@ -5,7 +5,6 @@
 package banner;
 
 import java.sql.*;
-import javax.sql.*;
 
 /**
  *

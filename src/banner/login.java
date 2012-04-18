@@ -4,12 +4,8 @@
  */
 package banner;
 
-import java.sql.*;
-import javax.sql.*;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-import javax.swing.*;
-import java.util.*;
-import java.awt.event.*;
 /**
  *
  * @author lambert
@@ -126,8 +122,7 @@ public class login extends javax.swing.JDialog {
     }//GEN-LAST:event_usernameActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-       
+ 
         String name = username.getText();
         char [] pw  = passwordField.getPassword();
         String password = new String(pw);
