@@ -239,16 +239,16 @@ public class studentForm extends javax.swing.JFrame {
         String dbtime;
         try {
             ResultSet rset = Db.getData("SELECT * FROM courses");
-            String info="";
+            //String info="";
             while (rset.next()) {
                         
-                 String crn = rset.getString("crn"); 
-                 String course = rset.getString("course");
-                 String section = rset.getString("section");
-                 String title = rset.getString("title");
-                 String days = rset.getString("days");
-                 String time = rset.getString("time");
-                 jTextArea1.append(String.format("%-10s %-20s %-10s %-70s %-10s %-10s\n",
+                 String crn = rset.getString("crn").trim(); 
+                 String course = rset.getString("course").trim();
+                 String section = rset.getString("section").trim();
+                 String title = rset.getString("title").trim();
+                 String days = rset.getString("days").trim();
+                 String time = rset.getString("time").trim();
+                 jTextArea1.append(String.format("%-10s %-20s %-10s %-70s %-20s %-20s\n",
                         crn, course, section, title, days, time));
 
             }

@@ -4,6 +4,8 @@
  */
 package banner;
 
+import java.sql.*;
+
 /**
  *
  * @author lambert
@@ -48,6 +50,11 @@ public class FacultyForm extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(6, 1, 6));
 
         jButton3.setText("Display All Courses");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Search");
 
@@ -169,6 +176,29 @@ public class FacultyForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        try{
+            ResultSet rset = Db.getData("SELECT * FROM courses");
+            //String info="";
+            while (rset.next()) {
+                        
+                 String crn = rset.getString("crn").trim(); 
+                 String course = rset.getString("course").trim();
+                 String section = rset.getString("section").trim();
+                 String title = rset.getString("title").trim();
+                 String days = rset.getString("days").trim();
+                 String time = rset.getString("time").trim();
+                 jTextArea1.append(String.format("%-10s %-20s %-10s %-70s %-20s %-20s\n",
+                        crn, course, section, title, days, time));
+
+            }
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -207,16 +207,20 @@ public class bannerForm extends javax.swing.JFrame {
         try {
 //load table data and assign them to some Strings for the ease of use.
 
-                ResultSet rset = Db.getData("SELECT * FROM courses");
-            String info="";
+                        ResultSet rset = Db.getData("SELECT * FROM courses");
+            //String info="";
             while (rset.next()) {
-                 info += rset.getString("crn") + 
-                         rset.getString("course")
-                         + rset.getString("section") + "\n";
-                 
+                        
+                 String crn = rset.getString("crn").trim(); 
+                 String course = rset.getString("course").trim();
+                 String section = rset.getString("section").trim();
+                 String title = rset.getString("title").trim();
+                 String days = rset.getString("days").trim();
+                 String time = rset.getString("time").trim();
+                 jTextArea1.append(String.format("%-10s %-20s %-10s %-70s %-20s %-20s\n",
+                        crn, course, section, title, days, time));
+
             }
-            jTextArea1.setText(info);
-        
         }
         catch (Exception e) {
             System.out.println(e);
