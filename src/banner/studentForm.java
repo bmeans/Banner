@@ -304,10 +304,7 @@ System.out.println(e);
         new searchForm().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 3dda9930c4d0781018b92e30a9d5688f0c6ca9f7
 
     /**
      * @param args the command line arguments

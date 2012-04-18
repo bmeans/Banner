@@ -148,13 +148,13 @@ if (u.equals(name) && p.equals(password)) {
     {
        Student activeStudent = new Student(bannerid);
         this.setVisible(false);
-<<<<<<< HEAD
+
         Student newStudent = new Student(bannerid);
         newStudent.setBannerID(bannerid);
-=======
+
         //Student newStudent = new Student(bannerid);
         //newStudent.setBannerID(bannerid);
->>>>>>> 3dda9930c4d0781018b92e30a9d5688f0c6ca9f7
+
 
        studentForm form = new studentForm();
        form.setStudent(activeStudent);
