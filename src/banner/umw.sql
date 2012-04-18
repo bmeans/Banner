@@ -6,14 +6,13 @@
 -- Generation Time: Feb 17, 2010 at 10:52 PM
 -- Server version: 5.1.37
 -- PHP Version: 5.3.0
-<<<<<<< HEAD
 
 
 CREATE DATABASE IF NOT EXISTS umw;
-=======
+
 DROP DATABASE IF EXISTS umw;
 CREATE DATABASE umw;
->>>>>>> ddd62679f7cdd98b80075fcc6a66b771fa437a85
+
 GRANT ALL PRIVILEGES ON umw.* to 'assist'@'localhost' identified by 'assist';
 use umw;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -44,22 +43,19 @@ CREATE TABLE IF NOT EXISTS students (
     firstName varchar(11),
     lastName varchar(11),
     PRIMARY KEY(bannerid)
-<<<<<<< HEAD
+
 )ENGINE=MyISAM;
-=======
-) ENGINE = MYISAM;
->>>>>>> ddd62679f7cdd98b80075fcc6a66b771fa437a85
+
 
 CREATE TABLE IF NOT EXISTS faculty (
     bannerid int(11) NOT NULL,
     firstName varchar(11),
     lastName varchar(11),
     PRIMARY KEY(bannerid)
-<<<<<<< HEAD
+
 )ENGINE=MyISAM;
-=======
-) ENGINE = MYISAM;
->>>>>>> ddd62679f7cdd98b80075fcc6a66b771fa437a85
+
+
 
 --
 -- Dumping data for table 'users'
