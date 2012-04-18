@@ -5,7 +5,6 @@
 package banner;
 
 import java.sql.*;
-import javax.sql.*;
 
 /**
  *
@@ -17,7 +16,7 @@ private static Connection con;
 
 public static Connection getConnection() throws Exception {
 Class.forName("com.mysql.jdbc.Driver");
-con = DriverManager.getConnection("jdbc:mysql://localhost/umw", "root","5turtles");
+con = DriverManager.getConnection("jdbc:mysql://localhost/umw", "root","");
 return con;
 }
 

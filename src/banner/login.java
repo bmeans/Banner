@@ -4,12 +4,8 @@
  */
 package banner;
 
-import java.sql.*;
-import javax.sql.*;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-import javax.swing.*;
-import java.util.*;
-import java.awt.event.*;
 /**
  *
  * @author lambert
