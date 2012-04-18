@@ -236,12 +236,12 @@ public class studentForm extends javax.swing.JFrame {
         
         try {
             jTextArea1.setText("");
-            //System.out.println(student.getBannerID());
+            System.out.println(student.getBannerID());
             ResultSet rset = Db.getData("SELECT * FROM courses c INNER JOIN studentCourses sc INNER JOIN users u ON "
                     + "c.crn = sc.crn and sc.bannerid = u.bannerid AND u.bannerid = " + student.getBannerID()+";");
             //String info="";
             while (rset.next()) {
-                 System.out.println("here");
+                 //System.out.println("here");
                  String crn = rset.getString("crn").trim(); 
                  String course = rset.getString("course").trim();
                  String section = rset.getString("section").trim();
@@ -304,7 +304,10 @@ System.out.println(e);
         new searchForm().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3dda9930c4d0781018b92e30a9d5688f0c6ca9f7
 
     /**
      * @param args the command line arguments

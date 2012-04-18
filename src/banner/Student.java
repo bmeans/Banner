@@ -25,6 +25,7 @@ public class Student extends UMWPerson{
         super.setLastName(" ");
         super.setPassword(" ");
         super.setUserName(" ");
+        super.setBannerID(bannerid);
         classLevel = "";
         GPA = 0;
     }
