@@ -146,7 +146,7 @@ if (u.equals(name) && p.equals(password)) {
 //Correct username & login
     if(c.equals("S"))
     {
-        //UMWPerson activeStudent = new Student(bannerid);
+       UMWPerson activeStudent = new Student(bannerid);
         this.setVisible(false);
         Student newStudent = new Student();
         newStudent.setBannerID(bannerid);
@@ -237,6 +237,5 @@ System.out.println(e);
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
-   // private login dialog = new login(new javax.swing.JFrame(), true);
    
 }
