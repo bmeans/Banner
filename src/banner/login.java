@@ -148,13 +148,17 @@ if (u.equals(name) && p.equals(password)) {
     if(c.equals("S"))
     {
         UMWPerson activeStudent = new Student();
+        this.setVisible(false);
        new bannerForm().setVisible(true);
-     
+       
+      
     }
     
     if(c.equals("F"))
     {
-       // UMWPerson activeFaculty = new Faculty(bannerid);
+       UMWPerson activeFaculty = new Faculty(bannerid);
+       new bannerForm().setVisible(true);
+     //  dialog.setVisible(false);
     }
     
 
@@ -207,8 +211,8 @@ System.out.println(e);
          */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
-            public void run() {
-                login dialog = new login(new javax.swing.JFrame(), true);
+            public void run() {               
+               login dialog = new login(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
 
                     @Override
@@ -216,7 +220,7 @@ System.out.println(e);
                         System.exit(0);
                     }
                 });
-                dialog.setVisible(true);
+              dialog.setVisible(true);
             }
         });
     }
@@ -229,4 +233,6 @@ System.out.println(e);
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
+   // private login dialog = new login(new javax.swing.JFrame(), true);
+   
 }
