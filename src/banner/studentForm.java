@@ -229,6 +229,29 @@ public class studentForm extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
+        try {
+            jTextArea1.setText("");
+            //System.out.println(student.getBannerID());
+            ResultSet rset = Db.getData("SELECT * FROM courses c INNER JOIN studentCourses sc INNER JOIN users u ON "
+                    + "c.crn = sc.crn and sc.bannerid = u.bannerid AND u.bannerid = " + student.getBannerID()+";");
+            //String info="";
+            while (rset.next()) {
+                 System.out.println("here");
+                 String crn = rset.getString("crn").trim(); 
+                 String course = rset.getString("course").trim();
+                 String section = rset.getString("section").trim();
+                 String title = rset.getString("title").trim();
+                 String days = rset.getString("days").trim();
+                 String time = rset.getString("time").trim();
+                 jTextArea1.append(String.format("%-10s %-20s %-10s %-70s %-20s %-20s\n",
+                        crn, course, section, title, days, time));
+
+            }
+            //jTextArea1.setText(info);
+             
+} catch (Exception e) {
+System.out.println(e);
+}
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -236,8 +259,9 @@ public class studentForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String dbtime;
+        //String dbtime;
         try {
+            jTextArea1.setText("");
             ResultSet rset = Db.getData("SELECT * FROM courses");
             //String info="";
             while (rset.next()) {
@@ -264,7 +288,10 @@ System.out.println(e);
     private void jTextArea1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTextArea1AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextArea1AncestorAdded
-
+    
+    public void setStudent(Student student){
+        this.student = student;
+    }
 
     /**
      * @param args the command line arguments
@@ -307,6 +334,7 @@ System.out.println(e);
             }
         });
     }
+    private Student student;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton2;

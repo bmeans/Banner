@@ -120,7 +120,11 @@ public class login extends javax.swing.JDialog {
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameActionPerformed
-
+    
+    public Student passStudent(Student student){
+        return student;
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
  
         String name = username.getText();
@@ -144,7 +148,12 @@ if (u.equals(name) && p.equals(password)) {
     {
         //UMWPerson activeStudent = new Student(bannerid);
         this.setVisible(false);
-       new studentForm().setVisible(true);
+        Student newStudent = new Student();
+        newStudent.setBannerID(bannerid);
+
+       studentForm form = new studentForm();
+       form.setStudent(newStudent);
+       form.setVisible(true);
        
       
     }

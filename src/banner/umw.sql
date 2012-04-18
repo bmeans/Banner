@@ -81,6 +81,18 @@ CREATE TABLE IF NOT EXISTS studentCourses(
 	CONSTRAINT courses_crn_fk FOREIGN KEY (crn) REFERENCES courses (crn)
 ) ENGINE = MYISAM;
 
+INSERT INTO studentCourses (bannerid, crn) VALUES
+    (2, 12901),
+    (2, 10628),
+    (2, 10557),
+    (2, 10243),
+    (2, 12556),
+    (3, 10756),
+    (3, 10369),
+    (3, 11535),
+    (3, 10868);
+
+    
 --
 -- Table structure for table 'courses'
 --
