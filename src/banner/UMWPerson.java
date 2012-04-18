@@ -15,6 +15,14 @@ public class UMWPerson {
     private String userName;
     private String password;
     
+    public UMWPerson(){
+        firstName = "";
+        lastName = "";
+        bannerID = "";
+        userName = "";
+        password = "";
+    }
+    
     protected String getFirstName(){
         return firstName;
     }

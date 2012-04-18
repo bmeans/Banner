@@ -6,9 +6,8 @@
 -- Generation Time: Feb 17, 2010 at 10:52 PM
 -- Server version: 5.1.37
 -- PHP Version: 5.3.0
-
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-CREATE DATABASE IF NOT EXISTS umw;
+DROP DATABASE IF EXISTS umw;
+CREATE DATABASE umw;
 GRANT ALL PRIVILEGES ON umw.* to 'assist'@'localhost' identified by 'assist';
 use umw;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -35,18 +34,18 @@ CREATE TABLE IF NOT EXISTS users (
 
 
 CREATE TABLE IF NOT EXISTS students (
-    bannerid int(11) NOT NULL,
+    bannerid int(11) NOT NULL AUTO_INCREMENT,
     firstName varchar(11),
     lastName varchar(11),
     PRIMARY KEY(bannerid)
-);
+) ENGINE = MYISAM;
 
 CREATE TABLE IF NOT EXISTS faculty (
     bannerid int(11) NOT NULL,
     firstName varchar(11),
     lastName varchar(11),
     PRIMARY KEY(bannerid)
-);
+) ENGINE = MYISAM;
 
 --
 -- Dumping data for table 'users'
@@ -94,7 +93,7 @@ CREATE TABLE IF NOT EXISTS courses (
   instructor varchar(25) NOT NULL,
   requirements varchar(35) NOT NULL,
   PRIMARY KEY (crn)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 --
 -- Dumping data for table 'umw'
