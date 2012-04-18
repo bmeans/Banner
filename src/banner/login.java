@@ -146,13 +146,13 @@ if (u.equals(name) && p.equals(password)) {
 //Correct username & login
     if(c.equals("S"))
     {
-       UMWPerson activeStudent = new Student(bannerid);
+       Student activeStudent = new Student(bannerid);
         this.setVisible(false);
-        Student newStudent = new Student();
-        newStudent.setBannerID(bannerid);
+        //Student newStudent = new Student(bannerid);
+        //newStudent.setBannerID(bannerid);
 
        studentForm form = new studentForm();
-       form.setStudent(newStudent);
+       form.setStudent(activeStudent);
        form.setVisible(true);
        
       

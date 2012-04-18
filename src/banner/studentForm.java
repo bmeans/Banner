@@ -236,12 +236,12 @@ public class studentForm extends javax.swing.JFrame {
         
         try {
             jTextArea1.setText("");
-            //System.out.println(student.getBannerID());
+            System.out.println(student.getBannerID());
             ResultSet rset = Db.getData("SELECT * FROM courses c INNER JOIN studentCourses sc INNER JOIN users u ON "
                     + "c.crn = sc.crn and sc.bannerid = u.bannerid AND u.bannerid = " + student.getBannerID()+";");
             //String info="";
             while (rset.next()) {
-                 System.out.println("here");
+                 //System.out.println("here");
                  String crn = rset.getString("crn").trim(); 
                  String course = rset.getString("course").trim();
                  String section = rset.getString("section").trim();
@@ -293,18 +293,17 @@ System.out.println(e);
     private void jTextArea1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTextArea1AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextArea1AncestorAdded
-<<<<<<< HEAD
+
     
     public void setStudent(Student student){
         this.student = student;
     }
-=======
+
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         new searchForm().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
->>>>>>> 1642dd6973557dcd2469371a125bcdea08982aa6
 
     /**
      * @param args the command line arguments
