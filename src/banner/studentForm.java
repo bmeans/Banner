@@ -246,11 +246,23 @@ public class studentForm extends javax.swing.JFrame {
             ResultSet rset = Db.getData("SELECT * FROM courses");
             String info="";
             while (rset.next()) {
+<<<<<<< HEAD
                  info += rset.getString("crn") + 
                          rset.getString("course")
                          + rset.getString("section") + "\n";        
+=======
+                 String crn = rset.getString("crn"); 
+                 String course = rset.getString("course");
+                 String section = rset.getString("section");
+                 String title = rset.getString("title");
+                 String days = rset.getString("days");
+                 String time = rset.getString("time");
+                 jTextArea1.append(String.format("%-5s %-10s %-5s %-45s %-5s %-5s\n",
+                        crn, course, section, title, days, time));
+                 
+>>>>>>> eddc2d34405fca31b886a760314152215222b82c
             }
-            jTextArea1.setText(info);
+            //jTextArea1.setText(info);
              
 } catch (Exception e) {
 System.out.println(e);
