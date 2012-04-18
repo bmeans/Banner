@@ -64,6 +64,11 @@ public class FacultyForm extends javax.swing.JFrame {
         });
 
         jButton9.setText("View Course Enrollment");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -205,10 +210,43 @@ public class FacultyForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
+<<<<<<< HEAD
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        try{    
+            ResultSet rset = Db.getData("select s.firstName, s.lastName, c.course, c.section "
+                    + "from students s inner join studentCourses sc inner join courses c where sc.crn = c.crn "
+                    + "and s.bannerid = sc.bannerid and sc.crn  in (select crn from courses c "
+                    + "where instructor LIKE \"%"+ teacher.getLastName()+"%\");");
+            //String info="";
+            jTextArea1.append(String.format("%1$-25s %2$-25s %3$-10s %4$-5s\n",
+                        "First Name", "Last Name", "Course", "Section"));
+            while (rset.next()) {
+                        
+                 String firstName = rset.getString("firstName").trim(); 
+                 String lastName = rset.getString("lastName").trim();
+                 String course = rset.getString("course").trim();
+                 String section = rset.getString("section").trim();
+                 jTextArea1.append(String.format("%1$-25s %2$-25s %3$-15s %4$-5s\n",
+                        firstName, lastName, course, section));
+
+            }
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    public void setFaculty(Faculty faculty){
+        this.teacher = faculty;
+    }
+    
+=======
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
        new searchForm().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
+>>>>>>> 82e4862f1ffa2070d024be50b01015053a1e23ed
     /**
      * @param args the command line arguments
      */
@@ -250,6 +288,7 @@ public class FacultyForm extends javax.swing.JFrame {
             }
         });
     }
+    private Faculty teacher;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton3;

@@ -165,21 +165,29 @@ if (u.equals(name) && p.equals(password)) {
     
     if(c.equals("F"))
     {
-       UMWPerson activeFaculty = new Faculty(bannerid);
-       new FacultyForm().setVisible(true);
+       Faculty activeFaculty = new Faculty(bannerid);
+       ResultSet rset2 = Db.getData("SELECT * FROM faculty WHERE bannerid='" + bannerid + "'");
+       if (rset2.next()){
+           activeFaculty.setFirstName(rset2.getString("firstName"));
+           activeFaculty.setLastName(rset2.getString("lastName"));
+       }
+       FacultyForm form = new FacultyForm();
+       this.setVisible(false);
+       form.setFaculty(activeFaculty);
+       form.setVisible(true);
      //  dialog.setVisible(false);
     }
     
 
 } else {
-JOptionPane.showMessageDialog(this, "wrong password!");
+    JOptionPane.showMessageDialog(this, "wrong password!");
 //Access Denied...
 }
 } else {
-JOptionPane.showMessageDialog(this, "Invalid username");
+    JOptionPane.showMessageDialog(this, "Invalid username");
 }
 } catch (Exception e) {
-System.out.println(e);
+    System.err.println(e);
 }
 
     }//GEN-LAST:event_jButton1ActionPerformed
