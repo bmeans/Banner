@@ -110,4 +110,14 @@ public class Course {
   public void setRequirements(String reqs){
       requirements = reqs;
   }
+  
+  public boolean equals(Course otherCourse){
+      return crn.equals(otherCourse.getCRN()) && course.equals(otherCourse.getCourseName())
+              && section == otherCourse.getSection() && title.equals(otherCourse.getCourseTitle())
+              && poi == otherCourse.getPOI() && prereqs == otherCourse.getPrereqs()
+              && atc.equals(otherCourse.getATC()) && credits == otherCourse.getCredits()
+              && time.equals(otherCourse.getTime()) && days.equals(otherCourse.getDays())
+              && building.equals(otherCourse.getBuilding()) && room.equals(otherCourse.getRoom())
+              && instructor.equals(otherCourse.getBuilding()) && requirements.equals(otherCourse.getRequirements());
+  }
 }
