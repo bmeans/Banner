@@ -122,8 +122,7 @@ public class login extends javax.swing.JDialog {
     }//GEN-LAST:event_usernameActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-       
+ 
         String name = username.getText();
         char [] pw  = passwordField.getPassword();
         String password = new String(pw);
@@ -138,7 +137,7 @@ String u = rset.getString("username");
 String p = rset.getString("password");
 String c = rset.getString("classification");
 String bannerid = rset.getString("bannerid");
-System.out.println(c);
+
 if (u.equals(name) && p.equals(password)) {
 //Correct username & login
     if(c.equals("S"))
