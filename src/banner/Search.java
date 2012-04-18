@@ -11,15 +11,7 @@ import java.sql.ResultSet;
  */
 
 public class Search {
-//    public static void main(String args[]){
-//        try{
-//            search("course", "ARAB");
-//            search("title", "Individual Study");
-//            search("instructor", "Kim");
-//        }catch(Exception e){
-//            System.err.println(e);
-//        }    
-//    }
+
     
     public static String search(String type, String specific) throws Exception{
         String info="";
@@ -37,8 +29,7 @@ public class Search {
                             + rset.getString("time")+ "\n";
                 
             }
-//            System.out.println(info);
-            } catch (Exception e) {
+         } catch (Exception e) {
                 System.out.println(e);
             }
         return info;
