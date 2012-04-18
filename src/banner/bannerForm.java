@@ -72,6 +72,11 @@ public class bannerForm extends javax.swing.JFrame {
         });
 
         jButton4.setText("Search");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Login");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -81,6 +86,11 @@ public class bannerForm extends javax.swing.JFrame {
         });
 
         jButton6.setText("Register");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -233,6 +243,14 @@ public class bannerForm extends javax.swing.JFrame {
         new login(this, true).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        new searchForm().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        new register().setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
 
     /**
