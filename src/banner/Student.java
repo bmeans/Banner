@@ -14,24 +14,31 @@ package banner;
 public class Student extends UMWPerson{
     
     //data members
-    private Course currentCourses;
-    private Course prevCourses;
+    private static final CourseList currentCourses = new CourseList();
+    private static final CourseList prevCourses = new CourseList();
     private String classLevel;
     private int GPA;
     
     //constructor
     Student(){
+        super.setFirstName("");
+        super.setLastName(" ");
+        super.setPassword(" ");
+        super.setUserName(" ");
+        classLevel = "";
         GPA = 0;
     }
     
-    //setters
-    private void setCurrentCourses(Course toAdd){
-        
+    //add courses
+    private void addCurrentCourses(Course course){
+        currentCourses.add(course);
     }
     
-    private void setPreviousCourses(Course toAdd){
-        
+    private void addPreviousCourses(Course course){
+        prevCourses.add(course);
     }
+    
+    //setters
   
     private void setClassLevel(String level){
         classLevel = level;
@@ -42,11 +49,11 @@ public class Student extends UMWPerson{
     }
     
     //getters
-    private Course getCurrentCourses(){
+    private CourseList getCurrentCourses(){
         return currentCourses;
     }
     
-    private Course getPreviousCourses(){
+    private CourseList getPreviousCourses(){
         return prevCourses;
     }
     

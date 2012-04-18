@@ -24,6 +24,24 @@ public class Course {
   private String instructor;
   private String requirements;
   
+  
+  private void Course(){
+      crn = "";
+      course = "";
+      section = 0;
+      title = "";
+      poi = 'n';
+      prereqs = 'n';
+      atc = "";
+      credits = 0;
+      time = "";
+      days = "";
+      building = "";
+      room = "";
+      instructor = "";
+      requirements = "";
+  }
+  
   public String getCRN(){
       return crn;
   }
