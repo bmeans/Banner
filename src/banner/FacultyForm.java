@@ -57,6 +57,11 @@ public class FacultyForm extends javax.swing.JFrame {
         });
 
         jButton4.setText("Search");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton9.setText("View Course Enrollment");
 
@@ -199,6 +204,10 @@ public class FacultyForm extends javax.swing.JFrame {
             System.out.println(e);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       new searchForm().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -293,18 +293,18 @@ System.out.println(e);
     private void jTextArea1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTextArea1AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextArea1AncestorAdded
-<<<<<<< HEAD
+
     
     public void setStudent(Student student){
         this.student = student;
     }
-=======
+
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         new searchForm().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
->>>>>>> 1642dd6973557dcd2469371a125bcdea08982aa6
+
 
     /**
      * @param args the command line arguments

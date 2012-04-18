@@ -148,7 +148,7 @@ if (u.equals(name) && p.equals(password)) {
     {
        UMWPerson activeStudent = new Student(bannerid);
         this.setVisible(false);
-        Student newStudent = new Student();
+        Student newStudent = new Student(bannerid);
         newStudent.setBannerID(bannerid);
 
        studentForm form = new studentForm();

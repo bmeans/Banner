@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-<?xml version="1.0" encoding="UTF-8"?>
-<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/Users/Brendan/NetBeansProjects/Banner/src/banner/Db.java</file>
-        <file>file:/Users/Brendan/NetBeansProjects/Banner/src/banner/studentForm.java</file>
-        <file>file:/Users/Brendan/NetBeansProjects/Banner/src/banner/bannerForm.java</file>
-        <file>file:/Users/Brendan/NetBeansProjects/Banner/src/banner/FacultyForm.java</file>
-        <file>file:/Users/Brendan/NetBeansProjects/Banner/src/banner/umw.sql</file>
-        <file>file:/Users/Brendan/NetBeansProjects/Banner/src/banner/login.java</file>
-        <file>file:/Users/Brendan/NetBeansProjects/Banner/src/banner/umwSQL.java</file>
-    </open-files>
-</project-private>
-=======
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
@@ -24,9 +9,7 @@
         <file>file:/C:/Users/lambert/Documents/NetBeansProjects/Banner/src/banner/FacultyForm.java</file>
         <file>file:/C:/Users/lambert/Documents/NetBeansProjects/Banner/src/banner/CourseList.java</file>
         <file>file:/C:/Users/lambert/Documents/NetBeansProjects/Banner/src/banner/searchForm.java</file>
-        <file>file:/C:/Users/lambert/Documents/NetBeansProjects/Banner/src/banner/Student.java</file>
         <file>file:/C:/Users/lambert/Documents/NetBeansProjects/Banner/src/banner/resultsForm.java</file>
         <file>file:/C:/Users/lambert/Documents/NetBeansProjects/Banner/src/banner/Db.java</file>
     </open-files>
 </project-private>
->>>>>>> 1642dd6973557dcd2469371a125bcdea08982aa6
