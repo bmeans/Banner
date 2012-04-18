@@ -4,6 +4,8 @@
  */
 package banner;
 
+import java.sql.ResultSet;
+
 /**
  *
  * @author Brendan
@@ -64,6 +66,31 @@ public class Student extends UMWPerson{
     
     private int getGPA(){
         return GPA;
+    }
+    protected String getSchedule()
+    {
+        String schedule ="";
+         try {
+           
+            String bannerid = this.getBannerID();
+            ResultSet rset = Db.getData("SELECT * FROM courses c INNER JOIN studentCourses sc INNER JOIN users u ON "
+                    + "c.crn = sc.crn and sc.bannerid = u.bannerid AND u.bannerid = " + bannerid +";");
+            //String info="";
+            while (rset.next()) {
+                 //System.out.println("here");
+                 String crn = rset.getString("crn").trim(); 
+                 String course = rset.getString("course").trim();
+                 String section = rset.getString("section").trim();
+                 String title = rset.getString("title").trim();
+                 String days = rset.getString("days").trim();
+                 String time = rset.getString("time").trim();
+                 
+                  schedule +=(crn + course + section + title + days + time + "\n") ;
+                   }        
+            } catch (Exception e) {
+                System.out.println(e);
+               }
+           return schedule;
     }
     
     
