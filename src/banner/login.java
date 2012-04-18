@@ -149,7 +149,7 @@ if (u.equals(name) && p.equals(password)) {
     {
         //UMWPerson activeStudent = new Student(bannerid);
         this.setVisible(false);
-       new bannerForm().setVisible(true);
+       new studentForm().setVisible(true);
        
       
     }
@@ -157,7 +157,7 @@ if (u.equals(name) && p.equals(password)) {
     if(c.equals("F"))
     {
        UMWPerson activeFaculty = new Faculty(bannerid);
-       new bannerForm().setVisible(true);
+       new FacultyForm().setVisible(true);
      //  dialog.setVisible(false);
     }
     

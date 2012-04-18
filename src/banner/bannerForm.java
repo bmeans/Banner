@@ -212,36 +212,19 @@ public class bannerForm extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         try {
-            ResultSet rset = Db.getData("SELECT crn, course, title FROM courses ");
-            while (rset.next()) {
 //load table data and assign them to some Strings for the ease of use.
 
-                String u = rset.getString("username");
-                String p = rset.getString("password");
-                String c = rset.getString("classification");
-                String bannerid = rset.getString("bannerid");
-                System.out.println(c);
-                if (u.equals(name) && p.equals(password)) {
-                //Correct username & login
-                    if(c.equals("S")){
-                        //UMWPerson activeStudent = new Student(bannerid);
-                        this.setVisible(false);
-                        new bannerForm().setVisible(true);
-                    }
-
-                    if(c.equals("F")){
-                        UMWPerson activeFaculty = new Faculty(bannerid);
-                        new bannerForm().setVisible(true);
-                        //  dialog.setVisible(false);
-                    }
-
-                } 
-                else {
-                    JOptionPane.showMessageDialog(this, "error1");
-                    //Access Denied...
-                }
-            } 
-        } 
+                ResultSet rset = Db.getData("SELECT * FROM courses");
+            String info="";
+            while (rset.next()) {
+                 info += rset.getString("crn") + 
+                         rset.getString("course")
+                         + rset.getString("section") + "\n";
+                 
+            }
+            jTextArea1.setText(info);
+        
+        }
         catch (Exception e) {
             System.out.println(e);
             }
@@ -249,8 +232,9 @@ public class bannerForm extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
+        
         new login(this, true).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton5ActionPerformed
 
 
