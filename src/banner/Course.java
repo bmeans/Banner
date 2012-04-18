@@ -67,4 +67,47 @@ public class Course {
   public String getRequirements(){
       return requirements;
   }
+  
+  public void setCRN(String num){
+      crn = num;
+  }
+  public void setCourseName(String course){
+      this.course = course;
+  }
+  public void setSection(int num){
+      section = num;
+  }
+  public void setTitle(String title){
+      this.title = title;
+  }
+  public void setPOI(char poi){
+      this.poi = poi;
+  }
+  public void setPrereqs(char yOrN){
+      prereqs = yOrN;
+  }
+  public void setATC(String atc){
+      this.atc = atc;
+  }
+  public void setCredits(int creds){
+      credits = creds;
+  }
+  public void setTime(String time){
+      this.time = time;
+  }
+  public void setDays(String days){
+      this.days = days;
+  }
+  public void setBuilding(String building){
+      this.building = building;
+  }
+  public void setRoom(String room){
+      this.room = room;
+  }
+  public void setInstructor(String name){
+      instructor = name;
+  }
+  public void setRequirements(String reqs){
+      requirements = reqs;
+  }
 }
