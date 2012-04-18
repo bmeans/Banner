@@ -190,6 +190,7 @@ public class FacultyForm extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         try{
+            jTextArea1.setText("");
             ResultSet rset = Db.getData("SELECT * FROM courses");
             //String info="";
             while (rset.next()) {
@@ -210,10 +211,11 @@ public class FacultyForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
-<<<<<<< HEAD
+
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
         try{    
+            jTextArea1.setText("");
             ResultSet rset = Db.getData("select s.firstName, s.lastName, c.course, c.section "
                     + "from students s inner join studentCourses sc inner join courses c where sc.crn = c.crn "
                     + "and s.bannerid = sc.bannerid and sc.crn  in (select crn from courses c "
@@ -241,12 +243,11 @@ public class FacultyForm extends javax.swing.JFrame {
         this.teacher = faculty;
     }
     
-=======
+
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
        new searchForm().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
->>>>>>> 82e4862f1ffa2070d024be50b01015053a1e23ed
     /**
      * @param args the command line arguments
      */
