@@ -90,7 +90,8 @@ INSERT INTO studentCourses (bannerid, crn) VALUES
     (3, 10756),
     (3, 10369),
     (3, 11535),
-    (3, 10868);
+    (3, 10868),
+    (3, 12901);
 
     
 --
