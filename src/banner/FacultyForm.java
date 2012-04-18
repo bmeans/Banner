@@ -248,10 +248,6 @@ public class FacultyForm extends javax.swing.JFrame {
        new searchForm().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
-<<<<<<< HEAD
-
-=======
->>>>>>> ce52206419eda6c22e9b26a378ebe34c7ad73928
     /**
      * @param args the command line arguments
      */

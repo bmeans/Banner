@@ -4,6 +4,8 @@
  */
 package banner;
 
+import java.sql.ResultSet;
+
 /**
  *
  * @author lambert
@@ -45,6 +47,11 @@ public class AddDrop extends javax.swing.JFrame {
         });
 
         jButton2.setText("DROP");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("CRN");
 
@@ -131,12 +138,38 @@ public class AddDrop extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String crn = jTextField1.getText();
+                try{
+            classes.setText("");
+            Db.putData("INSERT INTO studentCourses (bannerid, crn) VALUES "
+                    + "("+activeStudent.getBannerID()+", "+crn+");");
+            //String info="";
+            classes.setText(activeStudent.getSchedule());
+        }
+                catch (Exception e){
+                    System.out.print(e);
+                }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         classes.setText(activeStudent.getSchedule());
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        String crn = jTextField1.getText();
+                try{
+            classes.setText("");
+            Db.putData("DELETE FROM studentCourses WHERE bannerid = " + activeStudent.getBannerID()+" and crn = "+crn+";");
+            //String info="";
+            classes.setText(activeStudent.getSchedule());
+        }
+                catch (Exception e){
+                    System.out.print(e);
+                }
+                      
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
