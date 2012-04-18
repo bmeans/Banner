@@ -1,6 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/* THIS FILE WAS FOR TESTING!!!
+ * 
  */
 package banner;
 
