@@ -6,6 +6,10 @@ package banner;
 
 import java.sql.*;
 import javax.sql.*;
+import javax.swing.JOptionPane;
+import javax.swing.*;
+import java.util.*;
+import java.awt.event.*;
 /**
  *
  * @author lambert
@@ -123,30 +127,36 @@ public class login extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        String dbtime;
-        String dbUrl = "jdbc:mysql://localhost/umw";
-        String dbClass = "com.mysql.jdbc.Driver";
+       
         String name = username.getText();
         char [] pw  = passwordField.getPassword();
         String password = new String(pw);
-        String query = "Select * FROM users WHERE username = " +  name + "AND password = " + password;
-      /*  
-        if (username.getText().isEmpty()) {
-           JOptionPane.showMessageDialog(this, "Please enter Username");
-        } else if (jPasswordField1.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please enter Password");
-        } else {
-try {
-ResultSet rset = Db.getData("SELECT * FROM login WHERE user='" + username.getText() + "'");
 
-if (rset.next()) {
+        
+        try {
+            ResultSet rset = Db.getData("SELECT * FROM users WHERE username='" + username.getText() + "'");
+            if(rset.next()) {
 //load table data and assign them to some Strings for the ease of use.
 
-String u = rset.getString("user");
-String p = rset.getString("pass");
-
-if (u.equals(username.getText()) && p.equals(password) {
-//Unlocked... write ur Code here
+String u = rset.getString("username");
+String p = rset.getString("password");
+String c = rset.getString("classification");
+String bannerid = rset.getString("bannerid");
+System.out.println(c);
+if (u.equals(name) && p.equals(password)) {
+//Correct username & login
+    if(c.equals("S"))
+    {
+        UMWPerson activeStudent = new Student();
+       new bannerForm().setVisible(true);
+     
+    }
+    
+    if(c.equals("F"))
+    {
+       // UMWPerson activeFaculty = new Faculty(bannerid);
+    }
+    
 
 } else {
 JOptionPane.showMessageDialog(this, "wrong password!");
@@ -158,8 +168,7 @@ JOptionPane.showMessageDialog(this, "Invalid username");
 } catch (Exception e) {
 System.out.println(e);
 }
-} */
-  
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
