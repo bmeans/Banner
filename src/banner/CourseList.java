@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 package banner;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  *
@@ -18,5 +18,9 @@ public class CourseList {
     
     public boolean remove(Course course){
         return list.remove(course);
+    }
+    
+    public ListIterator iterator(){
+        return list.listIterator();
     }
 }
