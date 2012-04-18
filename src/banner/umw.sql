@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS users (
 
 
 CREATE TABLE IF NOT EXISTS students (
-    bannerid int(11) NOT NULL AUTO_INCREMENT,
+    bannerid int(11) NOT NULL,
     firstName varchar(11),
     lastName varchar(11),
     PRIMARY KEY(bannerid)

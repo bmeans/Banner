@@ -197,15 +197,34 @@ public class register extends javax.swing.JFrame {
              if(classif == ' '){
                  //popup for not selection radio button
              }
+             char [] pw  = jPasswordField1.getPassword();
+              String password = new String(pw);
              
              Db.putData("INSERT INTO users (username, password, classification)"
                 + " VALUES(\'"+username.getText() 
-                +"\', \'"+ jPasswordField1.getPassword()+"\', \'"+ classif +"\')");
+                +"\', \'"+ password+"\', \'"+ classif +"\')");
+             
+             if (classif == 'F'){
+                 Db.putData("INSERT INTO faculty (bannerid, firstName, lastName)"
+                         + " VALUES ((SELECT bannerid from users where username = \'" +username.getText()+
+                         "\' and password = \'"+password+"\'),"
+                         + "\'"+firstName.getText()+"\', \'"+lastName.getText()+"\');" );
+             }
+             if (classif == 'S'){
+                 String temp = "INSERT INTO students (bannerid, firstName, lastName)"
+                         + " VALUES ((SELECT bannerid from users where username = \'" +username.getText()+
+                         "\' and password = \'"+password+"\'),"
+                         + "\'"+firstName.getText()+"\', \'"+lastName.getText()+"\');";
+                 System.out.println(temp);
+                 Db.putData(temp);
+             
              this.setVisible(false);
-        }catch (Exception e){
+         }
+         }
+        catch (Exception e){
             System.out.println(e);
         }
-        
+       
     }//GEN-LAST:event_submitRegisterActionPerformed
     
     /**

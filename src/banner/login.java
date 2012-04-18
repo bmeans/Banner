@@ -130,6 +130,7 @@ public class login extends javax.swing.JDialog {
         String name = username.getText();
         char [] pw  = passwordField.getPassword();
         String password = new String(pw);
+        //System.out.println(password);
 
         
         try {
