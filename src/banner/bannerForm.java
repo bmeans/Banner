@@ -215,16 +215,16 @@ public class bannerForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
     }//GEN-LAST:event_jButton1ActionPerformed
-=======
+
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
        System.exit(1); 
     }//GEN-LAST:event_jButton8ActionPerformed
->>>>>>> bf99f8d967be7b5103cc93dca97e5a98012b270a
+
 
     /**
      * @param args the command line arguments
