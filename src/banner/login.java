@@ -137,7 +137,7 @@ String u = rset.getString("username");
 String p = rset.getString("password");
 String c = rset.getString("classification");
 String bannerid = rset.getString("bannerid");
-System.out.println(c);
+
 if (u.equals(name) && p.equals(password)) {
 //Correct username & login
     if(c.equals("S"))

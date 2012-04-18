@@ -246,10 +246,9 @@ public class studentForm extends javax.swing.JFrame {
             ResultSet rset = Db.getData("SELECT * FROM courses");
             String info="";
             while (rset.next()) {
-                 info += rset.getString("crn ") + 
-                         rset.getString("course ")
-                         + rset.getString("section ") + "\n";
-                 
+                 info += rset.getString("crn") + 
+                         rset.getString("course")
+                         + rset.getString("section") + "\n";        
             }
             jTextArea1.setText(info);
              
